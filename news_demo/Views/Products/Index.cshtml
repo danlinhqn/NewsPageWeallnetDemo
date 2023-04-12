@@ -1,0 +1,35 @@
+﻿<!-- Gọi Thẳng Model cần dùng => khai báo @Model. + khi sử dụng => Thêm List<> khi muốn gọi hết list -->
+@model List<news_demo.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Product - Page</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <td>Product ID</td>
+            <td>Product Name</td>
+            <td>Price</td>
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.Price</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+

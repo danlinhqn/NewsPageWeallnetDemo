@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - weallnet</title>
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/site.css" />
+    <script src="~/lib/KnockoutJs/knockout-3.5.1.js"></script>
+    <link rel="icon" type="image/x-icon" href="~/img/icon/favicon.ico">
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+</head>
+<body ">
+
+    <!-- Thiết kế Menu tại đây => -->
+
+    <div class="header-container" style="height: 60px;">
+
+
+        <!-- Thiết kế tab bên góc trái -->
+        <!-- Thiết kế Logo tại đây-->
+
+        <div class="header-brand">
+            <a href="/vi/trai-nghiem">
+                <img src="~/img/logo-weallnetnew.png" class="logo" alt="logo">
+            </a>
+        </div>
+
+        <!-- Thiết kế Search Box =>-->
+
+        <div class="header-search js-header-search">
+            <div class="header-search-group js-header-search-group">
+
+                <input id="header-search-input" class="header-search-input js-header-search-input"
+                       onfocus="handleShowSearch()"
+                       onblur="handleCloseSearch()" type="text" value="" placeholder="Tìm kiếm">
+
+                <img src="~/img/icon/line.png" class="line-icon js-line-icon" alt="">
+                <img src="~/img/icon/search-icon.png" class="search-icon js-search-icon" alt="">
+            </div>
+        </div>
+
+        <!-- Thiết kế tab bên góc phải -->
+
+        <div class="header-right">
+
+            <!-- Khung chọn ngôn ngữ -->
+
+            <div>
+                <form  method="post" role="form" >
+                  
+                    <div class="header-change-lag"style="display:flex">
+
+                        <div>
+                            <a>
+                                <img class="" src="~/img/icon/icon-vn.png" width="30" alt="">
+                            </a>
+                        </div>
+
+                        <div>
+
+                            <!-- Click for show Hover tab => -->
+
+                            <a class="content-change-lag-show">
+                                <img class="lang" src="~/img/icon/lang-dropdown.png" width="25" alt="">
+                            </a>
+
+                            <!-- Hover div này => -->
+
+                            <div class="content-change-lag-hide">
+                                <div class="content-change-lag">
+                                    <img src="~/img/icon/icon-vn.png" class="img_lag" style="filter: grayscale(100%);">
+
+                                    <img src="~/img/icon/icon-england.png" class="img_lag">
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        </div>
+
+                </form>
+            </div>
+
+
+
+            <!-- Khung Đăng Nhập -->
+
+            <div class="nav_account">
+                <a href="/vi/Account/RedirectLogin?returnUrl=%2Fvi%2Ftrai-nghiem" class="">
+                    Đăng nhập
+                </a>
+                <span class="c-primary" style="color: white;">|</span>
+                <a href="/Account/Register" class="">
+                    Đăng ký
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Thiết kế Body => -->
+
+    <!-- Left Bar Thiết Kế Tại Đây -->
+
+    <div class="container-fluid" style=" padding-left: 0px; background-color: #fff8f2; ">
+
+        <div class="row" id="id_s_row">
+            <div class="col-2 text-white" id="style_for_left_bar">
+
+                <div class="wan-left-sidebar-container">
+
+                    <div class="wan-left-sidebar-menu">
+
+                        <!--Tab 1 -->
+                        <a class="wan-left-sidebar-menu-item " href="/vi/tin-tuc">
+                            <img src="~/img/icon/icon-news.png" class="wan-left-sidebar-menu-item-image" alt="">
+                            <p class="wan-left-sidebar-menu-item-text">Tin Tức</p>
+                        </a>
+                        <a class="wan-left-sidebar-menu-item " href="/vi/giai-tri">
+                            <img src="~/img/icon/icon-media.png" class="wan-left-sidebar-menu-item-image" alt="">
+                            <p class="wan-left-sidebar-menu-item-text">Giải trí</p>
+                        </a>
+
+                        <!-- Tab 2 -->
+
+                        <div class="wan-left-sidebar-menu-item-divider">
+                            <div class="wan-left-sidebar-trigger">
+                                <i class="arrow left"></i>
+                            </div>
+                        </div>
+
+                        <!-- Tab 3 -->
+
+                        <div class="wan-left-sidebar-login">
+                            <p class="wan-left-sidebar-title-text">Đăng nhập để theo dõi, xem phim và đọc tin tức mới</p>
+                            <div class="wan-left-sidebar-login-container">
+
+                                <div class="nav_account" style="width: 100%; justify-content: center;">
+
+                                    <span>
+                                        <a href="/vi/Account/RedirectLogin?returnUrl=%2Fvi%2Ftrai-nghiem" class="">
+                                            Đăng nhập
+                                        </a>
+                                        <span class="c-primary" style="color: white;">|</span>
+                                        <a href="/Account/Register" class="">
+                                            Đăng ký
+                                        </a>
+
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Tab 4 -->
+
+                        <div class="wan-left-sidebar-menu-item-divider">
+                        </div>
+
+                        <!-- Tab 5 -->
+
+                        <div class="wan-left-sidebar-top-trending">
+                            <p class="wan-left-sidebar-title-text">Tìm kiếm hàng đầu</p>
+                            <div class="wan-left-sidebar-top-trending-ribbon-container js-wan-left-sidebar-top-trending-ribbon-container">
+
+                                <a class="wan-left-sidebar-top-trending-ribbon" href="/vi/tim-kiem?query=Al Nassr">
+                                    Al Nassr
+                                </a><a class="wan-left-sidebar-top-trending-ribbon" href="/vi/tim-kiem?query=Grab">
+                                    Grab
+                                </a><a class="wan-left-sidebar-top-trending-ribbon" href="/vi/tim-kiem?query=Valencia">
+                                    Valencia
+                                </a><a class="wan-left-sidebar-top-trending-ribbon" href="/vi/tim-kiem?query=Bạn muốn hẹn hò">
+                                    Bạn muốn hẹn hò
+                                </a><a class="wan-left-sidebar-top-trending-ribbon" href="/vi/tim-kiem?query=Real Betis">
+                                    Real Betis
+                                </a><a class="wan-left-sidebar-top-trending-ribbon" href="/vi/tim-kiem?query=Arsenal">
+                                    Arsenal
+                                </a><a class="wan-left-sidebar-top-trending-ribbon" href="/vi/tim-kiem?query=Real Madrid">
+                                    Real Madrid
+                                </a><a class="wan-left-sidebar-top-trending-ribbon" href="/vi/tim-kiem?query=Man City">
+                                    Man City
+                                </a><a class="wan-left-sidebar-top-trending-ribbon" href="/vi/tim-kiem?query=PSG">
+                                    PSG
+                                </a><a class="wan-left-sidebar-top-trending-ribbon" href="/vi/tim-kiem?query=Lễ Phục sinh">
+                                    Lễ Phục sinh
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Tab 6 -->
+
+                        <div class="wan-left-sidebar-menu-item-divider">
+                        </div>
+
+                        <!-- Tab 7 -->
+
+                        <div class="wan-left-sidebar-menu-link">
+                            <div class="wan-left-sidebar-menu-link-item">
+                                <a href="/vi/gioi-thieu" target="_blank">Về WEALLNET</a>
+                                <a href="/vi/dich-vu" target="_blank">Dịch vụ</a>
+                                <a href="https://weallnet.com/vi/#tinh-nang" target="_blank">Tính năng</a>
+                                <a href="https://weallnet.com/vi/#nhan-xet" target="_blank">Nhận xét</a>
+                                <a href="/vi/hop-tac" target="_blank">Hợp tác</a>
+                                <a href="/vi/lien-he" target="_blank">Liên hệ</a>
+                            </div>
+
+                            <div class="wan-left-sidebar-menu-link-item">
+                                <a href="/vi/tuyen-dung" target="_blank">Tuyển dụng</a>
+                                <a href="/vi/dieu-khoan-va-dieu-kien" target="_blank">Điều khoản và điều kiện</a>
+                                <a href="/vi/chinh-sach" target="_blank">Chính sách bảo mật</a>
+                                <a href="/vi/hoi-dap" target="_blank">Hỏi nhanh đáp lẹ</a>
+                            </div>
+
+                            <div class="wan-left-sidebar-menu-link-item">
+                                <div>© 2023 Weallnet</div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 8 -->
+
+                        <div class="wan-left-sidebar-media-icon">
+                            <a href="#" target="_blank">
+                                <img src="~/img/icon/icon-facebook.png" alt="">
+                            </a>
+                            <a href="#" target="_blank">
+                                <img src="~/img/icon/icon-linkedin.png" alt="">
+                            </a>
+                            <a href="#" target="_blank">
+                                <img src="~/img/icon/icon-instagram.png" alt="">
+                            </a>
+                            <a href="#" target="_blank">
+                                <img src="~/img/icon/icon-tiktok.png" alt="">
+                            </a>
+                            <a href="#" target="_blank">
+                                <img src="~/img/icon/icon-youtube.png" alt="">
+                            </a>
+                        </div>
+
+                        <!-- # -->
+
+
+                    </div>
+
+                </div>
+            
+            </div>
+            <!-- Thiết kế nội dung trang nằm ở đây => -->
+            @RenderBody()
+        </div>
+    </div>
+    <!-- Thiết kế Footer tại đây => -->
+    <!--<footer class="border-top footer text-muted">
+    </footer> -->
+</body>
+</html>

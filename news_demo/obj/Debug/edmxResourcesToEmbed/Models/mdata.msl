@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EFdataModelStoreContainer" CdmEntityContainer="EFdataEntities">
+    <EntitySetMapping Name="films">
+      <EntityTypeMapping TypeName="EFdataModel.film">
+        <MappingFragment StoreEntitySet="films">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="url_img" ColumnName="url_img" />
+          <ScalarProperty Name="view_post" ColumnName="view_post" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="news">
+      <EntityTypeMapping TypeName="EFdataModel.news">
+        <MappingFragment StoreEntitySet="news">
+          <ScalarProperty Name="url_logo" ColumnName="url_logo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="url_img" ColumnName="url_img" />
+          <ScalarProperty Name="view_post" ColumnName="view_post" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="videos">
+      <EntityTypeMapping TypeName="EFdataModel.video">
+        <MappingFragment StoreEntitySet="video">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="url_img" ColumnName="url_img" />
+          <ScalarProperty Name="view_post" ColumnName="view_post" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="newsTops">
+      <EntityTypeMapping TypeName="EFdataModel.newsTop">
+        <MappingFragment StoreEntitySet="newsTop">
+          <ScalarProperty Name="url_img" ColumnName="url_img" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

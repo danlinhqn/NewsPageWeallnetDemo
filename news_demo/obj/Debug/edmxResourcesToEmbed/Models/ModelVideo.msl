@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataExModelStoreContainer" CdmEntityContainer="DataExEntities">
+    <EntitySetMapping Name="Videos">
+      <EntityTypeMapping TypeName="DataExModel.Video">
+        <MappingFragment StoreEntitySet="Video">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="url_img" ColumnName="url_img" />
+          <ScalarProperty Name="view_video" ColumnName="view_video" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

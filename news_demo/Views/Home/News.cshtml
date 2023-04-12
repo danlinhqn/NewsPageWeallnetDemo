@@ -1,0 +1,234 @@
+﻿<!-- Gọi Thẳng Model cần dùng => khai báo @Model. + khi sử dụng => Thêm List<> khi muốn gọi hết list -->
+@model news_demo.DTO.NewsDTO
+
+@{
+    ViewBag.Title = "News";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="layout_content_1">
+
+    <!-- Trang Video + Film => -->
+
+    <div class="col-10" id="s_col_10">
+
+        <div class="tiltle-catergory-news"><span class="tilte-video">Video mới nhất</span></div>
+
+        <div class="next_page_button"><i class="arrow_2 left_2"></i></div> <!-- Next Icon -->
+
+        <div class="tab-video-news-page">
+
+            <!-- Tab Video 1 -->
+
+            @foreach (var item in Model.listVideo)
+
+            {
+
+                <div class="layout_video-main">
+
+                    <div class="layout_video">
+                        <!-- In ra cover video post -->
+                        <img class="img-video" src="@item.url_img">
+                        <!-- Nut Play -->
+                        <img class="wan-videos-play-card-img" src="~/img/icon/btn-play.png">
+                        <!--Title + View + Love Icon-->
+                        <div class="wan-videos-meta">
+                            <span class="wan-videos-meta-title">@item.title</span>
+                            <span class="wan-videos-meta-views">@item.view_post Lượt xem</span>
+                            <span class="gg-heart"></span> <!-- Trai Tim ICON -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- # -->
+            }
+
+        </div>
+
+        <div class="next_page_button" style="left: 1538px;opacity: 1;"><i class="arrow_2 right_2"></i></div> <!-- Next Icon -->
+        <!-- # -->
+
+    </div>
+
+    <!-- Trang Film => -->
+
+    <div class="col-10" id="s_col_10">
+
+        <div class="tiltle-catergory-news"><span class="tilte-video">Phim dành cho bạn</span></div>
+
+        <!-- Next Icon -->
+
+        <div class="next_page_button"><i class="arrow_2 left_2"></i></div>
+
+        <div class="tab-video-news-page">
+
+            <!-- Tab Video 1 -->
+
+            @foreach (var item in Model.listFilm)
+
+            {
+
+                <div class="layout_video-main">
+
+                    <div class="layout_video">
+                        <!-- In ra cover video post -->
+                        <img class="img-video" src="@item.url_img">
+                        <!-- Nut Play -->
+                        <img class="wan-videos-play-card-img" src="~/img/icon/btn-play.png">
+                        <!--Title + View + Love Icon-->
+                        <div class="wan-videos-meta">
+                            <span class="wan-videos-meta-title">@item.title</span>
+                            <span class="wan-videos-meta-views">@item.view_post Luot xem</span>
+                            <span class="gg-heart"></span> <!-- Trai Tim ICON -->
+                        </div>
+                    </div>
+
+                </div>
+
+            }
+
+            <!-- # -->
+
+        </div>
+
+        <!-- Next Icon -->
+
+        <div class="next_page_button" style="left: 1538px;opacity: 1;"><i class="arrow_2 right_2"></i></div>
+        <!-- # -->
+
+    </div>
+
+    <!-- Trang Tin tieu Bieu -->
+
+    <div class="col-10" id="s_col_10">
+
+        <div class="tiltle-catergory-news"><span class="tilte-video">Trang tin tiêu biểu</span></div>
+
+        <div class="layout-news-logo-main">
+
+            <!-- Tab News Logo -->
+
+            @foreach (var item in Model.listNewsTop)
+
+            {
+
+                <div class="layout-news-logo">
+                    <div class="layout-news-logo-detail">
+                        <img src="~/img/news/@item.url_img">
+                    </div>
+                </div>
+
+            }
+
+            <!-- # -->
+
+        </div>
+
+        <!-- # -->
+
+    </div>
+
+    <!-- Trang Tin Moi Nhat => -->
+
+    <div class="col-10" id="s_col_10">
+
+        <div class="tiltle-catergory-news"><span class="tilte-video">Tin mới nhất</span></div>
+
+        <div class="layout-news-2-main">
+
+            <!-- Tab News primary => -->
+
+            @foreach (var item in Model.listNews1value)
+            {
+
+                <div class="layout-news-2">
+                    <img src="@item.url_img">
+                </div>
+
+                <div class="layout-news-2-tile-summary">
+
+                    <div class="layout-news-2-tile">
+
+                        <span>@item.title</span>
+
+                    </div>
+
+                    <div class="layout-news-2-summary">
+
+                        <span>
+                            @item.summary
+                        </span>
+
+                    </div>
+
+                    <div class="layout-news-2-icon-time-read-more">
+
+                        <div class="layout-news-2-icon-time-read-more-icon">
+                            <div class="layout-news-logo-detail-2">
+                                <img src="~/img/news/A (1).jpg">
+                            </div>
+                        </div>
+
+                        <div class="layout-news-2-icon-time-read-more-time"><span>3 giờ trước</span></div>
+
+                        <div class="layout-news-2-icon-time-read-more-read-more"><a href="#">Xem thêm</a></div>
+
+
+                    </div>
+                </div>
+
+            }
+
+            <!-- Tab Another small News => -->
+
+
+            <div class="layout-small-news-main-all">
+
+                <!-- Show small news -->
+
+                @foreach (var item in Model.listNews6value)
+
+                {
+                    <div class="layout-small-news-main">
+
+                        <div class="layout-small-news-cover">
+                            <img src="@item.url_img">
+                        </div>
+
+                        <div class="layout-small-news-title-icon">
+                            <div class="layout-small-news-title"><span>@item.title</span></div>
+
+                            <div class="layout-small-news-icon-time">
+
+                                <div class="layout-small-news-icon">
+
+                                    <div class="layout-news-logo-detail-3">
+                                        <img src="~/img/news/@item.url_logo">
+                                    </div>
+
+                                </div>
+
+                                <div class="layout-small-news-time">1 giờ trước</div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                }
+
+                <!-- # -->
+
+            </div>
+
+            <!-- # -->
+
+        </div>
+
+
+        <!-- # -->
+
+    </div>
+
+    <!-- # -->
+</div>
